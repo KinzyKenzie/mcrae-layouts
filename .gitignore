@@ -4,4 +4,4 @@ bower_components
 .parcel-cache
 /dashboard
 /extension
-/src
+*/src
