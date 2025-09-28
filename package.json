@@ -1,0 +1,57 @@
+{
+    "name": "mcrae-layouts",
+    "version": "0.1.0",
+    "description": "Layouts bundle for the McRaeathon Speedrun Marathon",
+    "author": {
+        "name": "KinzyKenzie",
+        "url": "https://kinzykenzie.com/"
+    },
+    "files": [
+        "dashboard",
+        "graphics",
+        "extension.js",
+        "extension"
+    ],
+    "keywords": [
+        "backgrounds",
+        "layouts",
+        "mcrae",
+        "nodecg-bundle",
+        "overlays",
+        "speedrun",
+        "stream"
+    ],
+    "nodecg": {
+        "compatibleRange": "^2.0.0",
+        "bundleDependencies": {
+            "nodecg-speedcontrol": "^2.0.0"
+        },
+        "graphics": [
+            {
+                "file": "index.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
+                "file": "16x9.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            }
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.5%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "license": "MIT"
+}
