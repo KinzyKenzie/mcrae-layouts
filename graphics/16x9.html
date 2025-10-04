@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="css/global.css">
-		<script type="module" src="index.js"></script>
+		<script type="module" src="js/index.js"></script>
+		<script type="module" src="js/donations.js"></script>
 	</head>
 	<body>
 		<div class="overlay">
@@ -18,6 +19,18 @@
 			<div class="string timer-text" style="left:1428px;top:838px;width:492px;height:170px">
 				<span id="timer" class="bold-text"></span>
 				<span id="run-estimate"></span>
+			</div>
+			<div class="string omnibar" style="left:259px;top:1015px;width:1453px;height:65px">
+				<span>Next up: <span id="run-next"></span></span>
+			</div>
+			<div class="string timer-text" style="left:1719px;top:1015px;width:201px;height:65px">
+				<span id="donation-total"></span>
+			</div>
+			<div class="string stroke" style="top:557px;width:436px;height:40px">
+				<span class="tag">Comms</span><span id="run-comms" class="stretch"></span>
+			</div>
+			<div class="string stroke" style="top:968px;width:436px;height:40px">
+				<span class="tag">Host</span><span id="run-host" class="stretch"></span>
 			</div>
 			<div class="string" style="top:1015px;width:252px;height:65px">
 				<img class="splash" src="src/images/logo_abftp2000_nomcr.png" />
