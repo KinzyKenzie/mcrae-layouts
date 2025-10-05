@@ -52,6 +52,12 @@
                 "singleInstance": false
             },
             {
+                "file": "4x3_2p.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
                 "file": "ngage.html",
                 "width": 1920,
                 "height": 1080,
