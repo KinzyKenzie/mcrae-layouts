@@ -1,0 +1,23 @@
+#run-runner {
+    font-size: 48px;
+}
+
+#run-game {
+    font-size: 48px;
+    line-height: 52px;
+}
+
+#timer {
+    font-size: 54px;
+    line-height: 58px;
+}
+
+#run-category {
+    font-size: 28px;
+    line-height: 32px;
+}
+
+#run-estimate {
+    font-size: 28px;
+    line-height: 32px;
+}
