@@ -35,14 +35,24 @@ runDataActiveRun.on('change', (newVal, oldVal) => {
 });
 
 timer.on('change', (newVal, oldVal) => {
-    document.getElementById('timer').innerHTML = newVal.time;
+    if (!!document.getElementById('timer')) {
+        document.getElementById('timer').innerHTML = newVal.time;
+    }
 });
 
 runDataActiveRunSurrounding.on('change', (newVal, oldVal) => {
     if (!!newVal.next) {
         runDataArray.value.forEach((runData) => {
             if (runData.id == newVal.next) {
-                document.getElementById('run-next').innerHTML = runData.game + ' by ' + getAllRunners(runData);
+                if(!!document.getElementById('run-next')) {
+                    document.getElementById('run-next').innerHTML = runData.game + ' by ' + getAllRunners(runData);
+                }
+                if(!!document.getElementById('run-game-next')) {
+                    document.getElementById('run-game-next').innerHTML = runData.game;
+                }
+                if(!!document.getElementById('run-runner-next')) {
+                    document.getElementById('run-runner-next').innerHTML = getAllRunners(runData);
+                }
                 return;
             }
         });
@@ -107,7 +117,7 @@ function runTextScaling() {
     var scaledStrings = document.getElementsByClassName('scalable');
     
     for (let i = 0; i < scaledStrings.length; i++) {
-        let scaleWidth = scaledStrings[i].offsetWidth / (scaledStrings[i].innerHTML.length * 25.00);
+        let scaleWidth = scaledStrings[i].offsetWidth / (scaledStrings[i].innerHTML.length * 30.00);
         let oldSize = parseFloat(window.getComputedStyle(scaledStrings[i]).getPropertyValue("font-size"));
 
         if (fontSize < oldSize) { fontSize = oldSize; }

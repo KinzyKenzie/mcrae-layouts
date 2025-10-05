@@ -34,6 +34,18 @@
                 "singleInstance": false
             },
             {
+                "file": "intermission.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
+                "file": "countdown.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
                 "file": "16x9.html",
                 "width": 1920,
                 "height": 1080,
