@@ -40,6 +40,12 @@
                 "singleInstance": false
             },
             {
+                "file": "16x9_2p.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
                 "file": "4x3.html",
                 "width": 1920,
                 "height": 1080,
