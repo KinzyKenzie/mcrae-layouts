@@ -3,12 +3,28 @@ body {
     line-height: 56px;
 }
 
+#donation-total {
+    font-size: 128px;
+    line-height: 128px;
+}
+
+.title {
+    text-align: left;
+    padding-left: 32px;
+    padding-bottom: 24px;
+}
+
 .bold-text {
     font-size: 72px;
     line-height: 84px;
 }
 
-#donation-total {
-    font-size: 128px;
-    line-height: 128px;
+.bold-next {
+    font-size: 54px !important;
+    line-height: 66px;
+}
+
+.next {
+    font-size: 36px;
+    line-height: 44px;
 }
