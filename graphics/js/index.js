@@ -18,6 +18,9 @@ runDataActiveRun.on('change', (newVal, oldVal) => {
     if (!!document.getElementById('run-runner4')) {
         document.getElementById('run-runner4').innerHTML = getPlayerSequential(newVal, 4);
     }
+    if (!!document.getElementById('run-runner-all')) {
+        document.getElementById('run-runner-all').innerHTML = getAllRunners(newVal);
+    }
     if (!!document.getElementById('run-game')) {
         document.getElementById('run-game').innerHTML = newVal.game ?? '';
     }
