@@ -28,6 +28,36 @@
         },
         "graphics": [
             {
+                "file": "4x3_2p.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
+                "file": "4x3.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
+                "file": "16x9_2p.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
+                "file": "16x9.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
+                "file": "countdown.html",
+                "width": 1920,
+                "height": 1080,
+                "singleInstance": false
+            },
+            {
                 "file": "index.html",
                 "width": 1920,
                 "height": 1080,
@@ -40,43 +70,13 @@
                 "singleInstance": false
             },
             {
-                "file": "countdown.html",
+                "file": "ngage.html",
                 "width": 1920,
                 "height": 1080,
                 "singleInstance": false
             },
             {
                 "file": "speech.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "16x9.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "16x9_2p.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "4x3.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "4x3_2p.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "ngage.html",
                 "width": 1920,
                 "height": 1080,
                 "singleInstance": false
