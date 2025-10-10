@@ -92,12 +92,15 @@ function getPlayerSequential(run, id) {
             bulk.push(run.teams[i].players[j].name);
         }
     }
-
+    
+    if (bulk.length == 0) return '';
     return bulk[id - 1] ?? '';
 }
 
 function getAllRunners(run) {
-    if (run.teams.length == 1 && run.teams[0].players.length == 1) {
+    if (run.teams.length == 0) {
+        return '';
+    } else if (run.teams.length == 1 && run.teams[0].players.length == 1) {
         return run.teams[0].players[0].name;
     }
 
@@ -112,7 +115,7 @@ function getAllRunners(run) {
 
         out.push(team.join(', '));
     }
-
+    
     return out.join(' vs. ');
 }
 
@@ -120,13 +123,15 @@ function runTextScaling() {
     var scaledStrings = document.getElementsByClassName('scalable');
     
     for (let i = 0; i < scaledStrings.length; i++) {
-        let scaleWidth = scaledStrings[i].offsetWidth / (scaledStrings[i].innerHTML.length * 30.00);
+        if (scaledStrings[i].innerHTML.length == 0) { continue; }
+
+        let scaleWidth = scaledStrings[i].offsetWidth / (scaledStrings[i].innerHTML.length * 25.00);
         let oldSize = parseFloat(window.getComputedStyle(scaledStrings[i]).getPropertyValue("font-size"));
 
         if (fontSize < oldSize) { fontSize = oldSize; }
 
         if (scaleWidth < 1.0) {
-            scaledStrings[i].style.fontSize = '' + (oldSize * scaleWidth) + 'px';
+            scaledStrings[i].style.fontSize = '' + (fontSize * scaleWidth) + 'px';
         } else {
             scaledStrings[i].style.fontSize = '' + fontSize + 'px';
         }
