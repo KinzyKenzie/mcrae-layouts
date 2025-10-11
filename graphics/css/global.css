@@ -85,6 +85,10 @@ div.stroke {
     display: none;
 }
 
+.race-result {
+    padding-top: 2px;
+}
+
 .tag {
     background-color: #06081a;
     text-shadow: none;

@@ -39,24 +39,39 @@ runDataActiveRun.on('change', (newVal, oldVal) => {
 
 timer.on('change', (newVal, oldVal) => {
     let timer = document.getElementById('timer');
-    if (!timer) { return }
+    let raceResults = document.getElementsByClassName('race-result');
 
-    timer.innerHTML = newVal.time;
+    if (!!timer) {
+        timer.innerHTML = newVal.time;
 
-    switch(newVal.state) {
-        case 'running':
-            timer.style.color = '#eee';
-            break;
-        case 'finished':
-            if (Math.floor(0.001 * newVal.milliseconds) < runDataActiveRun.value.estimateS) {
-                timer.style.color = '#c0aa00';
-            } else {
-                timer.style.color = '#0080c0';
+        switch(newVal.state) {
+            case 'running':
+                timer.style.color = '#eee';
+                break;
+            case 'finished':
+                if (Math.floor(0.001 * newVal.milliseconds) < runDataActiveRun.value.estimateS) {
+                    timer.style.color = '#c0aa00';
+                } else {
+                    timer.style.color = '#0080c0';
+                }
+                break;
+            default:
+                timer.style.color = '#888';
+                break;
+        }
+    }
+    
+    ///TODO: Doesn't clear the field if a completion is cancelled
+    if (raceResults.length > 0 && Object.keys(newVal.teamFinishTimes).length > 0) {
+        let teams = runDataActiveRun.value.teams;
+        for (const [key, value] of Object.entries(newVal.teamFinishTimes)) {
+            for (let i = 0; i < teams.length; i++) {
+                if (key == teams[i].id) {
+                    document.getElementById('timer-result' + (1 + i)).innerHTML = value.time;
+                    document.getElementById('timer-result' + (1 + i)).parentElement.style.display = 'flex';
+                }
             }
-            break;
-        default:
-            timer.style.color = '#888';
-            break;
+        }
     }
 });
 
