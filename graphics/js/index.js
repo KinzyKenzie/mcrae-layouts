@@ -38,8 +38,25 @@ runDataActiveRun.on('change', (newVal, oldVal) => {
 });
 
 timer.on('change', (newVal, oldVal) => {
-    if (!!document.getElementById('timer')) {
-        document.getElementById('timer').innerHTML = newVal.time;
+    let timer = document.getElementById('timer');
+    if (!timer) { return }
+
+    timer.innerHTML = newVal.time;
+
+    switch(newVal.state) {
+        case 'running':
+            timer.style.color = '#eee';
+            break;
+        case 'finished':
+            if (Math.floor(0.001 * newVal.milliseconds) < runDataActiveRun.value.estimateS) {
+                timer.style.color = '#c0aa00';
+            } else {
+                timer.style.color = '#0080c0';
+            }
+            break;
+        default:
+            timer.style.color = '#888';
+            break;
     }
 });
 
