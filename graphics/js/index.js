@@ -22,17 +22,17 @@ runDataActiveRun.on('change', (newVal, oldVal) => {
         document.getElementById('run-runner-all').innerHTML = getAllRunners(newVal);
     }
     if (!!document.getElementById('run-game')) {
-        document.getElementById('run-game').innerHTML = newVal.game ?? '';
+        document.getElementById('run-game').innerHTML = newVal?.game ?? '';
     }
     if (!!document.getElementById('run-category')) {
-        document.getElementById('run-category').innerHTML = newVal.category ?? '';
+        document.getElementById('run-category').innerHTML = newVal?.category ?? '';
     }
     if (!!document.getElementById('run-estimate')) {
-        document.getElementById('run-estimate').innerHTML = 'EST: ' + newVal.estimate;
+        document.getElementById('run-estimate').innerHTML = 'EST: ' + (newVal?.estimate ?? '0:00:00');
     }
     
-    setComms(document.getElementById('run-comms'), newVal.customData);
-    setHost(document.getElementById('run-host'), newVal.customData);
+    setComms(document.getElementById('run-comms'), newVal?.customData);
+    setHost(document.getElementById('run-host'), newVal?.customData);
 
     runTextScaling();
 });
@@ -66,7 +66,7 @@ timer.on('change', (newVal, oldVal) => {
         let result = null;
 
         for (let i = 0; i < raceResults.length; i++) {
-        for (const [key, value] of Object.entries(newVal.teamFinishTimes)) {
+            for (const [key, value] of Object.entries(newVal.teamFinishTimes)) {
                 if (key == teams[i].id) {
                     result = value;
                 }
@@ -104,7 +104,7 @@ runDataActiveRunSurrounding.on('change', (newVal, oldVal) => {
     }
 });
 
-function setComms(field, customData) {
+function setComms(field, customData = {}) {
     if (!field) { return }
 
     if (Object.hasOwn(customData, 'comms')) {
@@ -115,7 +115,7 @@ function setComms(field, customData) {
     }
 }
 
-function setHost(field, customData) {
+function setHost(field, customData = {}) {
     if (!field) { return }
 
     if (Object.hasOwn(customData, 'host')) {
@@ -128,6 +128,7 @@ function setHost(field, customData) {
 
 function getPlayerSequential(run, id) {
     let bulk = [];
+    if (!run) { return ''; }
     
     for (let i = 0; i < run.teams.length; i++) {
         for (let j = 0; j < run.teams[i].players.length; j++) {
