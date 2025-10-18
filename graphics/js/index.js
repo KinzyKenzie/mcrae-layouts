@@ -61,16 +61,26 @@ timer.on('change', (newVal, oldVal) => {
         }
     }
     
-    ///TODO: Doesn't clear the field if a completion is cancelled
-    if (raceResults.length > 0 && Object.keys(newVal.teamFinishTimes).length > 0) {
+    if (raceResults.length > 0 && !!runDataActiveRun.value) {
         let teams = runDataActiveRun.value.teams;
+        let result = null;
+
+        for (let i = 0; i < raceResults.length; i++) {
         for (const [key, value] of Object.entries(newVal.teamFinishTimes)) {
-            for (let i = 0; i < teams.length; i++) {
                 if (key == teams[i].id) {
-                    document.getElementById('timer-result' + (1 + i)).innerHTML = value.time;
-                    document.getElementById('timer-result' + (1 + i)).parentElement.style.display = 'flex';
+                    result = value;
                 }
             }
+
+            if (!!result) {
+                raceResults[i].innerHTML = result.time;
+                raceResults[i].parentElement.style.display = 'flex';
+            } else {
+                raceResults[i].innerHTML = '';
+                raceResults[i].parentElement.style.display = 'none';
+            }
+
+            result = null;
         }
     }
 });
