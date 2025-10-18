@@ -4,7 +4,7 @@
 const baseUrl = 'https://mcrae.myspeed.run/tracker/api/v2';
 const eventId = 4;
 
-export default function(nodecg) {
+module.exports = function(nodecg) {
     // Declare this replicant at start up to make sure there's always a default if needed.
     const donationData = nodecg.Replicant('donationData', { default: {} });
 
