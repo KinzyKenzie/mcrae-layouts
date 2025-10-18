@@ -14,7 +14,7 @@ module.exports = function(nodecg) {
         if (resp.ok) {
             const data = await resp.json();
             if (data) {
-                if (donationData.value != data.amount) {
+                if (donationData.value.amount != data.amount) {
                     nodecg.log.info(`Donation total updated: ${data.amount}`);
                 }
                 donationData.value = data;
