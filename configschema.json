@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Generated schema for mcrae-layouts configuration",
+    "type": "object",
+    "properties": {
+        "charity": {
+            "type": "boolean",
+            "default": "false"
+        },
+        "supporting": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "supportingShort": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "scheduleUrl": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "tracker": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "default": "false"
+                },
+                "baseUrl": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "eventId": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "enabled",
+                "baseUrl",
+                "eventId"
+            ]
+        },
+        "commands": {
+            "type": "object",
+            "properties": {
+                "donate": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "schedule": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            }
+        }
+    },
+    "required": [
+        "charity",
+        "supporting",
+        "supportingShort",
+        "scheduleUrl",
+        "tracker",
+        "commands"
+    ]
+}
