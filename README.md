@@ -1,4 +1,4 @@
-# mcrae-layouts
+# McRaeathon Layouts
 
 > The on-screen graphics used during McRaeathon's speedrun events.
 
@@ -17,7 +17,7 @@ Next, clone the `build` branch of this repository into the NodeCG `bundles` fold
 You will probably also want a default configuration you can fill in, which can be created using:
 > ```
 > cd mcrae-layouts
-> nodecg defaultconfig.
+> nodecg defaultconfig
 > ```
 
 Then, to get the most recent changes for [nodecg-speedcontrol](https://github.com/speedcontrol/nodecg-speedcontrol), clone the `build` branch and install dependencies, similar to above:
@@ -31,7 +31,7 @@ Then, to get the most recent changes for [nodecg-speedcontrol](https://github.co
 ## Events
 
 Here's a list of events this bundle has been used at so far:
-* McRaeathon Presents: A Blast from the Past 2000!
+* [McRaeathon Presents: A Blast from the Past 2000!](https://oengus.io/marathon/McRaeBFTP2)
 
 ## Credits
 
@@ -42,6 +42,6 @@ Here's a list of events this bundle has been used at so far:
     * [zoton2](https://github.com/zoton2)
     * [inkfarer](https://github.com/inkfarer)
 * Fonts used:
-    * [`Aero Matics`](https://tilde.club/~harvettfox96/l/) by Jayvee Enaguas.
+    * [Aero Matics](https://tilde.club/~harvettfox96/l/) by Jayvee Enaguas.
     * [Enigmatic](https://dartcanada.tripod.com/Objets/New/new.html) by Darren Rigby.
 * Credits text shamelessly copied from [esa-layouts](https://github.com/esamarathon/esa-layouts).
